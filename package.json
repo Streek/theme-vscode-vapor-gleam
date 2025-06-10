@@ -4,6 +4,25 @@
   "description": "A vibrant Gleam-inspired color theme with vapor wave and neon aesthetics",
   "version": "1.0.0",
   "publisher": "streek",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Vapor Gleam",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Vapor Gleam-color-theme.json"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/streek/theme-vscode-vapor-gleam.git"
+  },
   "icon": "icon.png",
   "galleryBanner": {
     "color": "#1a1a2e",
