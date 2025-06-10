@@ -1,0 +1,17 @@
+{
+  "name": "vapor-gleam",
+  "displayName": "Vapor Gleam",
+  "description": "A vibrant Gleam-inspired color theme with vapor wave and neon aesthetics",
+  "version": "1.0.0",
+  "publisher": "streek",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1a1a2e",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/streek/theme-vscode-vapor-gleam",
+  "bugs": {
+    "url": "https://github.com/streek/theme-vscode-vapor-gleam/issues"
+  },
+  "license": "MIT"
+}
