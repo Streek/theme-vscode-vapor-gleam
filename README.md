@@ -45,10 +45,6 @@ A vibrant VS Code color theme inspired by vapor wave aesthetics and neon lightin
 2. Type "Preferences: Color Theme"
 3. Select "Vapor Gleam" from the list
 
-## Screenshots
-
-*Add screenshots here showing the theme in action with different file types*
-
 ## Development
 
 To contribute or modify this theme:
