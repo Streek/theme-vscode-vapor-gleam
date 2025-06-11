@@ -2,6 +2,8 @@
 
 A vibrant VS Code color theme inspired by vapor wave aesthetics and neon lighting. Experience coding with a retro-futuristic visual style featuring bright magentas, cyans, and deep purples.
 
+![image](https://github.com/user-attachments/assets/dddc1241-93fc-4b05-83c1-4165974b7e41)
+
 ## Features
 
 - **Dark Theme**: Easy on the eyes with a dark background
