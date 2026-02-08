@@ -7,3 +7,7 @@ vsc-extension-quickstart.md
 **/.eslintrc.json
 **/*.map
 **/*.ts
+*.vsix
+.tool-versions
+mcp-server.log
+test.gleam

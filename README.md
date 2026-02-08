@@ -1,25 +1,24 @@
 # Vapor Gleam Theme
 
-A vibrant VS Code color theme inspired by vapor wave aesthetics and neon lighting. Experience coding with a retro-futuristic visual style featuring bright magentas, cyans, and deep purples.
+A VS Code color theme blending Gleam with vaporwave.
 
 ![image](https://github.com/user-attachments/assets/dddc1241-93fc-4b05-83c1-4165974b7e41)
 
 ## Features
 
-- **Dark Theme**: Easy on the eyes with a dark background
-- **Vapor Wave Aesthetics**: Inspired by 80s synthwave and neon culture  
-- **High Contrast**: Excellent readability with vibrant accent colors
-- **Comprehensive**: Supports syntax highlighting for all major languages
-- **UI Integration**: Consistent theming across entire VS Code interface
+- Dark theme blending Gleam and vaporwave colors
+- High contrast for readability
+- Broad syntax highlighting coverage
+- UI theming across VS Code
 
 ## Color Palette
 
-- **Primary Background**: Deep dark purple (`#0f0a1a`)
-- **Secondary Background**: Dark navy (`#0a0a0f`)
-- **Accent Magenta**: Bright pink (`#ff00ff`)
-- **Accent Cyan**: Electric blue (`#00ffff`)
-- **Text**: Pure white (`#ffffff`)
-- **Comments**: Purple (`#6b46c1`)
+- Primary background: `#1a1a2e`
+- Secondary background: `#0f0a1a`
+- Accent magenta: `#ffc1eb`
+- Accent cyan: `#8bbec7`
+- Text: `#e0def4`
+- Comments: `#6c7086`
 
 ## Installation
 
@@ -47,14 +46,14 @@ A vibrant VS Code color theme inspired by vapor wave aesthetics and neon lightin
 
 ## Development
 
-To contribute or modify this theme:
+To contribute or modify the theme:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/vapor-gleam-theme.git
+git clone https://github.com/streek/theme-vscode-vapor-gleam.git
 
 # Navigate to project
-cd vapor-gleam-theme
+cd theme-vscode-vapor-gleam
 
 # Install dependencies
 npm install
@@ -63,13 +62,25 @@ npm install
 npm run package
 ```
 
+## Local Testing
+
+```bash
+npm run package
+code --install-extension vapor-gleam-*.vsix
+```
+
+Then select the theme in VS Code:
+
+1. Command Palette → "Preferences: Color Theme"
+2. Choose "Vapor Gleam"
+
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+Issues and pull requests are welcome.
 
 ## License
 
-MIT License - see LICENSE file for details
+MIT License - see LICENSE.md for details
 
 ## Changelog
 

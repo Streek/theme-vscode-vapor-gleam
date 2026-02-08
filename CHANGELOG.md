@@ -2,21 +2,20 @@
 
 All notable changes to the "Vapor Gleam" extension will be documented in this file.
 
-## [1.0.0] - 2024-01-XX
+## [1.0.1] - 2026-02-08
+
+### Changed
+
+- Add missing VS Code recommended color tokens
+- Update docs, metadata, and packaging ignores
+
+## [1.0.0] - 2025-06-10
 
 ### Added
 
-- Initial release of Vapor Gleam theme
-- Dark theme with vapor wave aesthetics  
-- Comprehensive syntax highlighting for all major languages
-- Consistent UI theming across VS Code interface
-- High contrast neon color scheme
-- Support for terminal colors
-- Proper bracket matching and selection highlighting
-
-### Features
-
-- Deep purple/navy backgrounds for comfortable viewing
-- Bright magenta and cyan accent colors
-- Optimized for readability and visual appeal
-- Retro-futuristic design inspired by 80s synthwave culture
+- Initial release
+- Dark theme
+- Syntax highlighting for major languages
+- UI theming for VS Code
+- Terminal colors
+- Bracket match and selection highlights

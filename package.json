@@ -2,7 +2,7 @@
   "name": "vapor-gleam",
   "displayName": "Vapor Gleam",
   "description": "A vibrant Gleam-inspired color theme with vapor wave and neon aesthetics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "streek",
   "engines": {
     "vscode": "^1.60.0"
@@ -10,6 +10,21 @@
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "theme",
+    "gleam",
+    "vapor",
+    "vaporwave",
+    "neon",
+    "dark"
+  ],
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.26.1"
+  },
   "contributes": {
     "themes": [
       {

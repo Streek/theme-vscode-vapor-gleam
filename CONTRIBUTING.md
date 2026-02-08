@@ -15,7 +15,7 @@ Vapor Gleam is inspired by:
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v25.2.1 recommended)
 - VS Code
 - Git
 
