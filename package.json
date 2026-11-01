@@ -19,8 +19,11 @@
     "dark"
   ],
   "scripts": {
-    "package": "vsce package",
-    "publish": "vsce publish"
+    "check": "npm run check:metadata && npm run package && npm run check:vsix",
+    "check:metadata": "node scripts/check.js",
+    "check:vsix": "node scripts/check-vsix.js",
+    "package": "vsce package --no-dependencies",
+    "publish:only": "node scripts/publish.js"
   },
   "devDependencies": {
     "@vscode/vsce": "^2.26.1"

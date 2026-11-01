@@ -11,3 +11,4 @@ vsc-extension-quickstart.md
 .tool-versions
 mcp-server.log
 test.gleam
+test/**

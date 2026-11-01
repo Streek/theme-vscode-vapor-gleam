@@ -1,0 +1,83 @@
+{
+  "_comment": "Vapor Gleam Theme - JSON Syntax Test",
+  "_note": "Exercises: keys, string values, numbers, booleans, null, nested objects, arrays",
+
+  "string_value": "Hello, Vapor Gleam!",
+  "string_with_escapes": "tab:\tnewline:\nquote:\"backslash:\\",
+  "string_with_unicode": "\u0041\u0042\u0043 \u2603 \uD83D",
+  "empty_string": "",
+
+  "integer": 42,
+  "negative": -17,
+  "float": 3.14159,
+  "scientific": 1.5e10,
+  "negative_scientific": -2.5e-3,
+  "zero": 0,
+
+  "boolean_true": true,
+  "boolean_false": false,
+  "null_value": null,
+
+  "simple_array": [1, 2, 3, 4, 5],
+  "string_array": ["red", "green", "blue"],
+  "mixed_array": [1, "two", true, null, 3.14],
+  "empty_array": [],
+
+  "nested_object": {
+    "level1": {
+      "level2": {
+        "level3": {
+          "deep_value": "found it"
+        }
+      }
+    }
+  },
+
+  "array_of_objects": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@example.com",
+      "active": true,
+      "score": 95.5,
+      "tags": ["admin", "verified"],
+      "address": null
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@example.com",
+      "active": false,
+      "score": 82.3,
+      "tags": ["user"],
+      "address": {
+        "street": "123 Main St",
+        "city": "Springfield",
+        "state": "IL",
+        "zip": "62701"
+      }
+    }
+  ],
+
+  "color_palette": {
+    "primary_bg": "#1a1a2e",
+    "secondary_bg": "#0f0a1a",
+    "accent_magenta": "#ffc1eb",
+    "accent_cyan": "#8bbec7",
+    "text_primary": "#e0def4",
+    "text_muted": "#6c7086"
+  },
+
+  "urls": [
+    "https://example.com",
+    "https://github.com/streek/theme-vscode-vapor-gleam",
+    "file:///path/to/local/file.txt"
+  ],
+
+  "special_characters": {
+    "html_entities": "<div>&amp;</div>",
+    "regex_like": "^[a-z]+@[a-z]+\\.[a-z]{2,}$",
+    "path": "/usr/local/bin/node",
+    "windows_path": "C:\\Users\\streek\\Documents"
+  }
+}

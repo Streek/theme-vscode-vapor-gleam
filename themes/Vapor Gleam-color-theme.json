@@ -210,7 +210,6 @@
     "keybindingLabel.bottomBorder": "#6c7086",
     "inputOption.activeBackground": "#ffc1eb20",
     "inputOption.activeForeground": "#ffc1eb",
-    "inputOption.activeBorder": "#ffc1eb",
     "inputOption.hoverBackground": "#24253a",
     "diffEditor.insertedTextBackground": "#e4c87b20",
     "diffEditor.removedTextBackground": "#ff6b6b20",

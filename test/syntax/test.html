@@ -1,0 +1,403 @@
+<!-- ==========================================================================
+     Vapor Gleam Theme - HTML/CSS Syntax Test
+     ==========================================================================
+     Exercises: tags, attributes, entities, embedded CSS, embedded JS,
+     custom data attributes, ARIA, media queries, CSS variables, animations,
+     grid/flexbox, pseudo-elements, selectors.
+     ========================================================================== -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vapor Gleam theme test &amp; preview" />
+  <title>Vapor Gleam &mdash; Theme Test</title>
+
+  <style>
+    /* --- CSS Variables (custom properties) --- */
+    :root {
+      --bg-primary: #1a1a2e;
+      --bg-secondary: #0f0a1a;
+      --accent-magenta: #ffc1eb;
+      --accent-cyan: #8bbec7;
+      --text-primary: #e0def4;
+      --text-muted: #6c7086;
+      --border-color: #24253a;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --font-sans: system-ui, -apple-system, sans-serif;
+      --spacing-unit: 8px;
+      --transition-speed: 200ms;
+    }
+
+    /* --- Reset --- */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* --- Base --- */
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* --- Typography --- */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--accent-magenta);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(1.75rem, 4vw, 3rem); }
+    h2 { font-size: clamp(1.25rem, 3vw, 2rem); }
+
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: color var(--transition-speed) ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--accent-magenta);
+      text-decoration: underline;
+      outline: 2px solid var(--accent-magenta);
+      outline-offset: 2px;
+    }
+
+    code {
+      font-family: var(--font-mono);
+      background: var(--bg-secondary);
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+
+    /* --- Layout with Grid --- */
+    .container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: calc(var(--spacing-unit) * 3);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: calc(var(--spacing-unit) * 4);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* --- Card component --- */
+    .card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: calc(var(--spacing-unit) * 3);
+      transition: transform var(--transition-speed) ease,
+                  box-shadow var(--transition-speed) ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 193, 235, 0.1);
+    }
+
+    .card__title {
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-unit);
+    }
+
+    .card__body {
+      color: var(--text-muted);
+    }
+
+    /* --- Button --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-unit);
+      padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+      border: 1px solid transparent;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-speed) ease;
+    }
+
+    .btn--primary {
+      background: var(--accent-magenta);
+      color: var(--bg-primary);
+    }
+
+    .btn--primary:hover {
+      background: var(--accent-cyan);
+    }
+
+    .btn:disabled,
+    .btn[aria-disabled="true"] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* --- Pseudo-elements --- */
+    .divider::before {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent,
+        var(--accent-magenta),
+        transparent
+      );
+      margin: calc(var(--spacing-unit) * 4) 0;
+    }
+
+    /* --- Keyframe animation --- */
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px var(--accent-magenta);
+      }
+      50% {
+        text-shadow: 0 0 20px var(--accent-cyan),
+                     0 0 40px var(--accent-magenta);
+      }
+    }
+
+    .glow-text {
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    /* --- Nth-child selectors --- */
+    .list > li:nth-child(odd) {
+      background: rgba(255, 193, 235, 0.05);
+    }
+
+    .list > li:first-child {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    .list > li:last-child {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    /* --- Print styles --- */
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      .btn, .glow-text {
+        animation: none;
+        text-shadow: none;
+      }
+    }
+
+    /* --- Dark mode override --- */
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg-primary: #f0f0f5;
+        --text-primary: #1a1a2e;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="visually-hidden">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner">
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#features" aria-current="page">Features</a></li>
+        <li><a href="#colors">Colors</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main id="main" role="main">
+    <h1 class="glow-text">Vapor Gleam</h1>
+    <p>A theme blending <strong>Gleam</strong> with <em>vaporwave</em>.</p>
+
+    <!-- Cards grid -->
+    <div class="container">
+      <article class="card" data-category="syntax" data-index="0">
+        <h2 class="card__title">Syntax Highlighting</h2>
+        <p class="card__body">
+          Broad language support with consistent colors.
+        </p>
+        <button class="btn btn--primary" type="button" onclick="handleClick(this)">
+          Learn More
+        </button>
+      </article>
+
+      <article class="card" data-category="ui" data-index="1">
+        <h2 class="card__title">UI Theming</h2>
+        <p class="card__body">
+          Every VS Code surface &mdash; themed &amp; consistent.
+        </p>
+        <button class="btn btn--primary" type="button" disabled aria-disabled="true">
+          Coming Soon
+        </button>
+      </article>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <caption>Color Palette</caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Hex</th>
+          <th scope="col">Usage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Magenta</td>
+          <td><code>#ffc1eb</code></td>
+          <td>Accent, active elements</td>
+        </tr>
+        <tr>
+          <td>Cyan</td>
+          <td><code>#8bbec7</code></td>
+          <td>Functions, links</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Form -->
+    <form action="/subscribe" method="post" novalidate>
+      <fieldset>
+        <legend>Subscribe</legend>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required
+               placeholder="you@example.com"
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+               aria-describedby="email-help" />
+        <small id="email-help">We&apos;ll never share your email.</small>
+
+        <label for="role">
+          Role:
+          <select id="role" name="role">
+            <option value="user" selected>User</option>
+            <option value="admin">Admin</option>
+            <option value="guest">Guest</option>
+          </select>
+        </label>
+
+        <label>
+          <input type="checkbox" name="agree" required />
+          I agree to the <a href="/terms">terms</a>
+        </label>
+
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </fieldset>
+    </form>
+
+    <!-- HTML entities -->
+    <p>Entities: &lt;tag&gt; &amp; &quot;quotes&quot; &apos;apostrophe&apos; &copy; &mdash; &hellip;</p>
+
+    <!-- SVG inline -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+    </svg>
+
+    <!-- Picture element -->
+    <picture>
+      <source srcset="hero.avif" type="image/avif" />
+      <source srcset="hero.webp" type="image/webp" />
+      <img src="hero.jpg" alt="Hero image" width="800" height="400" loading="lazy" decoding="async" />
+    </picture>
+
+    <!-- Template and slot -->
+    <template id="card-template">
+      <div class="card">
+        <slot name="title">Default Title</slot>
+        <slot name="body">Default Body</slot>
+      </div>
+    </template>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025&ndash;2026 Keith Connolly. MIT License.</p>
+  </footer>
+
+  <!-- Embedded JavaScript -->
+  <script type="module">
+    // ES module syntax
+    const cards = document.querySelectorAll('.card');
+
+    function handleClick(element) {
+      const category = element.closest('[data-category]')?.dataset.category;
+      console.log(`Clicked: ${category}`);
+    }
+
+    // Intersection Observer for lazy animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    cards.forEach(card => observer.observe(card));
+
+    // Custom element
+    class VaporCard extends HTMLElement {
+      static observedAttributes = ['title'];
+
+      connectedCallback() {
+        this.render();
+      }
+
+      attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) this.render();
+      }
+
+      render() {
+        this.innerHTML = `<div class="card">
+          <h2>${this.getAttribute('title') ?? 'Untitled'}</h2>
+          <slot></slot>
+        </div>`;
+      }
+    }
+
+    customElements.define('vapor-card', VaporCard);
+  </script>
+</body>
+</html>

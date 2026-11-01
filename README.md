@@ -1,5 +1,7 @@
 # Vapor Gleam Theme
 
+Version `1.0.1`
+
 A VS Code color theme blending Gleam with vaporwave.
 
 ![image](https://github.com/user-attachments/assets/dddc1241-93fc-4b05-83c1-4165974b7e41)
@@ -55,17 +57,17 @@ git clone https://github.com/streek/theme-vscode-vapor-gleam.git
 # Navigate to project
 cd theme-vscode-vapor-gleam
 
-# Install dependencies
-npm install
+# Install dependencies deterministically
+npm ci
 
-# Package the extension
-npm run package
+# Run checks and create a local VSIX
+npm run check
 ```
 
 ## Local Testing
 
 ```bash
-npm run package
+npm run check
 code --install-extension vapor-gleam-*.vsix
 ```
 
@@ -83,6 +85,11 @@ Issues and pull requests are welcome.
 MIT License - see LICENSE.md for details
 
 ## Changelog
+
+### 1.0.1 - 2026-02-08
+
+- Added missing VS Code recommended color tokens
+- Updated documentation, metadata, and packaging ignores
 
 ### 1.0.0
 
